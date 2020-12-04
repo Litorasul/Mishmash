@@ -1,5 +1,3 @@
 <div>
-    <span>{{category.icon}} - </span>
-    <span>{{category.name}} - </span>
-    <span>{{category.objectId}}</span>
+    <a [routerLink]="['/categories', category.objectId]">{{category.name}}</a>
 </div>

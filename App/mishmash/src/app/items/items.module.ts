@@ -9,6 +9,8 @@ import { SearchComponent } from './search/search.component';
 import { SharedModule } from '../shared/shared.module';
 import { CategoryItemComponent } from './category-item/category-item.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { ItemsPerCategoryPageComponent } from './items-per-category-page/items-per-category-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,18 +19,21 @@ import { ListItemComponent } from './list-item/list-item.component';
     ListComponent,
     SearchComponent,
     CategoryItemComponent,
-    ListItemComponent
+    ListItemComponent,
+    ItemsPerCategoryPageComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     CategoriesComponent,
     DetailsComponent,
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    ItemsPerCategoryPageComponent
   ]
 })
 export class ItemsModule { }
