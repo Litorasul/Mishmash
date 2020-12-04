@@ -1,1 +1,7 @@
-<p>details works!</p>
+<div *ngFor="let pic of item.pictures">
+    <div>{{pic.url}}</div>
+</div>
+<h1>{{item.name}}</h1>
+<h4>{{item.price}}</h4>
+<p>{{item.description}}</p>
+<p>{{item.address}}, {{item.city}} {{item.country}}</p>

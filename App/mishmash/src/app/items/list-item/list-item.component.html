@@ -1,4 +1,6 @@
-<div>{{item.name}}</div>
+<div>
+    <a [routerLink]="['/details', item.objectId]">{{item.name}}</a>
+</div>
 <span>{{item.city}}, </span>
 <span>{{item.country}}</span>
 <div>{{item.price}}</div>

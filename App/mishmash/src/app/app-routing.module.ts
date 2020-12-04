@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
+import { DetailsComponent } from './items/details/details.component';
 import { ItemsPerCategoryPageComponent } from './items/items-per-category-page/items-per-category-page.component';
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'categories/:id',
     component:ItemsPerCategoryPageComponent
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent
   }
 ];
 
