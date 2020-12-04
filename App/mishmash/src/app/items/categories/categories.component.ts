@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ICategory } from 'src/app/shared/interfaces';
+import { ItemsService } from '../items.service';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  categoriesList: ICategory[] = [];
+
+  constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
+    this.itemsService.getCategories().subscribe(categoriesList => {
+      this.categoriesList = categoriesList;
+    })
   }
 
 }

@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from '../user/user.module';
+import { ItemsModule } from '../items/items.module';
 
 
 
@@ -19,6 +20,7 @@ import { UserModule } from '../user/user.module';
   imports: [
     CommonModule,
     UserModule,
+    ItemsModule,
     RouterModule
   ],
   exports: [

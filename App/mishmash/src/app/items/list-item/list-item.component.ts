@@ -2,14 +2,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IItemInList } from 'src/app/shared/interfaces';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-list-item',
+  templateUrl: './list-item.component.html',
+  styleUrls: ['./list-item.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListItemComponent implements OnInit {
 
   @Input()
-  itemsList!: IItemInList;
+  item!: IItemInList;
   constructor() { }
 
   ngOnInit(): void {
