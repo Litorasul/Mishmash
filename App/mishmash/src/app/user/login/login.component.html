@@ -1,1 +1,30 @@
-<p>login works!</p>
+<form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
+    <div>
+        <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+        <input #userEmail="ngModel" type="text" name="email" id="email" placeholder="Type your email..." ngModel required email>
+        <p *ngIf="userEmail.touched && userEmail.errors?.required" style="color: red;">
+            Email is required!
+        </p>
+        <p *ngIf="userEmail.touched && userEmail.errors?.email" style="color: red;">
+            Email is not valid!
+        </p>
+    </div>
+
+    <div>
+        <label for="password"><span><i class="fas fa-lock"></i></span></label>
+        <input #userPassword="ngModel" type="password" name="password" id="password" placeholder="Type your password..." ngModel required minlength="5">
+        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error" style="color: red;">
+            Password is required!
+        </p>
+        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error" style="color: red;">
+            Password must be at least 5 characters!
+        </p>
+    </div>
+
+    <button [disabled]="f.invalid">Login</button>
+
+    <p>
+        Don't have an account?
+        <a routerLink="/user/register">Register</a>
+    </p>
+</form>
