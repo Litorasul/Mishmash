@@ -14,9 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    LoginComponent, 
-    RegisterComponent, 
-    ProfileComponent, 
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
     ],
   imports: [
     CommonModule,
@@ -25,8 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports: [
-    LoginComponent, 
-    RegisterComponent, 
+    LoginComponent,
+    RegisterComponent,
     ProfileComponent,
   ]
 })

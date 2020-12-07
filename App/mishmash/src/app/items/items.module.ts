@@ -11,6 +11,8 @@ import { CategoryItemComponent } from './category-item/category-item.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ItemsPerCategoryPageComponent } from './items-per-category-page/items-per-category-page.component';
 import { RouterModule } from '@angular/router';
+import { AddItemComponent } from './add-item/add-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,20 +22,23 @@ import { RouterModule } from '@angular/router';
     SearchComponent,
     CategoryItemComponent,
     ListItemComponent,
-    ItemsPerCategoryPageComponent
+    ItemsPerCategoryPageComponent,
+    AddItemComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     CategoriesComponent,
     DetailsComponent,
     ListComponent,
     SearchComponent,
-    ItemsPerCategoryPageComponent
+    ItemsPerCategoryPageComponent,
+    AddItemComponent
   ]
 })
 export class ItemsModule { }

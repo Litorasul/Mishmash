@@ -20,3 +20,13 @@ export interface IItemDetails {
     pictures: IPicture[];
 
 }
+
+export interface IItemForSale {
+    country: string;
+    city: string;
+    price: number;
+    name: string;
+    address: string;
+    description: string;
+    pictures: IPicture[];
+}

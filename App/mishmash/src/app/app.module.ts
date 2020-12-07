@@ -9,6 +9,7 @@ import { ItemsService } from './items/items.service';
 import { AuthService } from './core/auth.service';
 import { UserService } from './user/user.service';
 import { TokenService } from './core/token.service';
+import { authInterceptorProvider } from './core/auth.interceptor';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TokenService } from './core/token.service';
     ItemsService,
     AuthService,
     TokenService,
-    UserService
+    UserService,
+    authInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

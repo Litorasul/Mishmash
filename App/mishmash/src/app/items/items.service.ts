@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { ICategory, IItemDetails, IItemInList } from '../shared/interfaces';
+import { ICategory, IItemDetails, IItemForSale, IItemInList } from '../shared/interfaces';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -10,6 +10,11 @@ const categoriesUrl = environment.apiCategoties;
 const itemsPerCategoryUrl = environment.apiItemsPerCategory;
 const itemDetailsUrl = environment.apiItemDetails;
 const loadPicturesUrl = environment.apiLoadPictures;
+const itemForSaleUrl = environment.apiItemForSale;
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class ItemsService {
@@ -25,5 +30,9 @@ export class ItemsService {
   }
   getItemDetails(id: string): Observable<IItemDetails> {
     return this.http.get<IItemDetails>(`${baseUrl}${itemDetailsUrl}${id}${loadPicturesUrl}`);
+  }
+
+  postItemForSale(item: IItemForSale): Observable<any> {
+    return this.http.post(`${baseUrl}${itemForSaleUrl}`, item, httpOptions);
   }
 }
