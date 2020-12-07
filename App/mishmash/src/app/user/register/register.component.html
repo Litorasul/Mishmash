@@ -1,8 +1,8 @@
 <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
 
     <div>
-        <label for="name"><span><i class="fas fa-user-tag"></i></span></label>
-        <input #userName="ngModel" type="text" name="name" id="name" placeholder="Type your username..." ngModel required minlength="4">
+        <label for="username"><span><i class="fas fa-user-tag"></i></span></label>
+        <input #userName="ngModel" type="text" name="username" id="username" placeholder="Type your username..." ngModel required minlength="4">
         <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
             Username is required!
         </p>
@@ -33,7 +33,7 @@
         </p>
     </div>
 
-    <button [disabled]="f.invalid">Login</button>
+    <button [disabled]="f.invalid">Register</button>
 
     <p>
         Have an account?

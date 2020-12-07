@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
           this.tokenService.saveUser(data);
 
           this.loginFailed = false;
-          this.router.navigate(['/']);
+          window.location.assign('/');
         },
         error: (err) => {
           this.errorMessage = err.error.message;

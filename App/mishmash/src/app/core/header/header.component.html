@@ -4,7 +4,7 @@
         <li><a routerLink="/user/login">Login</a></li>
         <li><a routerLink="/user/register">Register</a></li>
         <li><a routerLink="/user/profile">Profile</a></li>
-        <li>
+        <li *ngIf="isLogged">
             <button (click)="logoutHandler()">Logout</button>
         </li>
     </ul>

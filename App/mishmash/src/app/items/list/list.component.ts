@@ -9,7 +9,7 @@ import { IItemInList } from 'src/app/shared/interfaces';
 export class ListComponent implements OnInit {
 
   @Input()
-  itemsList!: IItemInList;
+  itemsList!: IItemInList[];
   constructor() { }
 
   ngOnInit(): void {
