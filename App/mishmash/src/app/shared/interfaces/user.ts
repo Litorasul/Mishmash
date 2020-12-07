@@ -3,7 +3,7 @@ export interface IUser {
     email: string;
     profilePicUrl: string;
     objectId: string;
-    'user-token': string;
+    userToken: string;
 }
 
 export interface ILoginCredentials {

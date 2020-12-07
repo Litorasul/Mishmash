@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(formValue).subscribe(
       {
         next: (data: any) => {
-          console.log(data);
           this.tokenService.saveToken(data['user-token']);
           this.tokenService.saveUser(data);
 
@@ -37,7 +36,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error: (err) => {
-          console.log(err);
           this.errorMessage = err.error.message;
           this.loginFailed = true;
           window.alert(this.errorMessage);
