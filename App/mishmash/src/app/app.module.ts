@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ItemsService } from './items/items.service';
+import { AuthService } from './core/auth.service';
+import { UserService } from './user/user.service';
+import { TokenService } from './core/token.service';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { ItemsService } from './items/items.service';
     AppRoutingModule
   ],
   providers: [
-    ItemsService
+    ItemsService,
+    AuthService,
+    TokenService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

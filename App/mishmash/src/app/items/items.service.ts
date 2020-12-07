@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { ICategory, IItemDetails, IItemInList } from '../shared/interfaces'
+import { ICategory, IItemDetails, IItemInList } from '../shared/interfaces';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
 
 const baseUrl = environment.apiBaseUrl;
 const categoriesUrl = environment.apiCategoties;

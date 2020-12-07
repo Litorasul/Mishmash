@@ -1,4 +1,4 @@
 export interface IPicture {
-    objectId:string;
+    objectId: string;
     url: string;
 }

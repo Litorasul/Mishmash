@@ -17,14 +17,14 @@ export class ItemsPerCategoryPageComponent implements OnInit {
   constructor(
     private itemsService: ItemsService,
     private activatedRoute: ActivatedRoute
-    ) { 
+    ) {
       this.id = this.activatedRoute.snapshot.params.id;
     }
 
   ngOnInit(): void {
     this.itemsService.getItemsPerCategory(this.id).subscribe(itemsList => {
       this.itemsList = itemsList;
-    })
+    });
   }
 
 }
