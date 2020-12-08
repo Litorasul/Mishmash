@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import * as Cloudinary from 'cloudinary-core';
+
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 import { CategoriesComponent } from './categories/categories.component';
 import { DetailsComponent } from './details/details.component';
@@ -10,9 +17,9 @@ import { SharedModule } from '../shared/shared.module';
 import { CategoryItemComponent } from './category-item/category-item.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ItemsPerCategoryPageComponent } from './items-per-category-page/items-per-category-page.component';
-import { RouterModule } from '@angular/router';
 import { AddItemComponent } from './add-item/add-item.component';
-import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +37,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     SharedModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    SlideshowModule,
+    CloudinaryModule.forRoot(Cloudinary, {cloud_name: 'daal2scr5'} as CloudinaryConfiguration)
   ],
   exports: [
     CategoriesComponent,

@@ -43,5 +43,8 @@
             Country is required!
         </p>
     </div>
-    <button [disabled]="f.invalid">Sell</button>
+    <button id="upload_widget" (click)="openUploadHandler($event)" class="cloudinary-button">
+      Upload pictures
+    </button>
+    <button type="submit" [disabled]="f.invalid">Sell</button>
 </form>

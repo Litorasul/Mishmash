@@ -1,7 +1,12 @@
-<div *ngFor="let pic of item.pictures">
-    <div>{{pic.url}}</div>
+<div *ngIf="isLoading">
+    <div>Loading...</div>
 </div>
-<h1>{{item.name}}</h1>
-<h4>{{item.price}}</h4>
-<p>{{item.description}}</p>
-<p>{{item.address}}, {{item.city}} {{item.country}}</p>
+<div *ngIf="!isLoading">
+    <div style="width: 500px;">
+        <slideshow [height]="'300px'" [imageUrls]="images" [backgroundSize]="'contain'" [showDots]="true"></slideshow>
+    </div>
+    <h1>{{item.name}}</h1>
+    <h4>{{item.price}}</h4>
+    <p>{{item.description}}</p>
+    <p>{{item.address}}, {{item.city}} {{item.country}}</p>
+</div>

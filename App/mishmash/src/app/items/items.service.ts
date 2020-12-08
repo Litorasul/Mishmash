@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { ICategory, IItemDetails, IItemForSale, IItemInList } from '../shared/interfaces';
+import { ICategory, IItemDetails, IItemForSale, IItemInList, IPicture, IPictureToAdd } from '../shared/interfaces';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -11,6 +11,7 @@ const itemsPerCategoryUrl = environment.apiItemsPerCategory;
 const itemDetailsUrl = environment.apiItemDetails;
 const loadPicturesUrl = environment.apiLoadPictures;
 const itemForSaleUrl = environment.apiItemForSale;
+const addPictureUrl = environment.apiAddPicture;
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -34,5 +35,13 @@ export class ItemsService {
 
   postItemForSale(item: IItemForSale): Observable<any> {
     return this.http.post(`${baseUrl}${itemForSaleUrl}`, item, httpOptions);
+  }
+
+  postPicture(picture: IPictureToAdd): Observable<IPicture> {
+    return this.http.post<IPicture>(`${baseUrl}${addPictureUrl}`, picture, httpOptions);
+  }
+
+  postPicturesToItemRelation(pictureIds: string[], itemId: string): Observable<any> {
+    return this.http.post(`${baseUrl}${itemDetailsUrl}${itemId}/pictures`, pictureIds, httpOptions);
   }
 }
