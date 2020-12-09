@@ -19,6 +19,7 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { ItemsPerCategoryPageComponent } from './items-per-category-page/items-per-category-page.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { from } from 'rxjs';
+import { UserModule } from '../user/user.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { from } from 'rxjs';
     SharedModule,
     RouterModule,
     FormsModule,
+    UserModule,
     SlideshowModule,
     CloudinaryModule.forRoot(Cloudinary, {cloud_name: 'daal2scr5'} as CloudinaryConfiguration)
   ],

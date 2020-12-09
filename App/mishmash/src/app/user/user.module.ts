@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserRoutingModule } from './user-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserInItemDetailsComponent } from './user-in-item-details/user-in-item-details.component';
 
 
 
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    UserInItemDetailsComponent,
     ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    UserInItemDetailsComponent,
   ]
 })
 export class UserModule { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { AuthService } from 'src/app/core/auth.service';
 import { IItemDetails } from 'src/app/shared/interfaces';
 import { ItemsService } from '../items.service';
 
@@ -14,16 +16,19 @@ export class DetailsComponent implements OnInit {
   id!: string;
   images!: string[];
   isLoading = false;
+  isUserLogged = false;
 
   constructor(
     private itemsService: ItemsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService
   ) {
     this.id = this.activatedRoute.snapshot.params.id;
   }
 
   ngOnInit(): void {
     this.isLoading = true;
+    this.isUserLogged = this.authService.authenticate();
     this.itemsService.getItemDetails(this.id).subscribe(item => {
       this.images = item.pictures.map(p => p.url);
       this.item = item;

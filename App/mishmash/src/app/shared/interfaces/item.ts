@@ -15,10 +15,10 @@ export interface IItemDetails {
     price: number;
     name: string;
     objectId: string;
+    ownerId: string;
     address: string;
     description: string;
     pictures: IPicture[];
-
 }
 
 export interface IItemForSale {

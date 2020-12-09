@@ -1,0 +1,59 @@
+.content {
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    padding: 10px 0;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.rating-avg {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #FFFBEC;
+    background-color: #5D2D50;
+}
+
+.username {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #1E606D;
+}
+
+.reviews-count {
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.reviews-count>i {
+    color: #FB7489;
+}
+
+.reviews-count>p {
+    margin: 0 10px;
+    color: #1E606D;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.message-btn {
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FB7489;
+    color: #FFFBEC;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 50px;
+}

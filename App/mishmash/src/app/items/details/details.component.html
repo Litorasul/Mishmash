@@ -1,12 +1,25 @@
 <div *ngIf="isLoading">
     <div>Loading...</div>
 </div>
-<div *ngIf="!isLoading">
-    <div style="width: 500px;">
-        <slideshow [height]="'300px'" [imageUrls]="images" [backgroundSize]="'contain'" [showDots]="true"></slideshow>
+<div class="content" *ngIf="!isLoading">
+    <div class="item-info">
+        <div class="slideshow-container">
+            <slideshow [height]="'300px'" [imageUrls]="images" [backgroundSize]="'contain'" [showDots]="true"></slideshow>
+        </div>
+        <h1 class="name">{{item.name}}</h1>
+        <h4 class="price">EUR {{item.price}}</h4>
+        <p class="description">{{item.description}}</p>
     </div>
-    <h1>{{item.name}}</h1>
-    <h4>{{item.price}}</h4>
-    <p>{{item.description}}</p>
-    <p>{{item.address}}, {{item.city}} {{item.country}}</p>
+    <div class="details">
+        <div *ngIf="!isUserLogged" class="unauthorized-container">
+            <p class="unauthorized-text">
+                More Details and Seller information are available only to registered Users.
+            </p>
+            <button class="unauthorized-btn" routerLink="/user/register">Register</button>
+        </div>
+        <div *ngIf="isUserLogged" class="authorized-container">
+            <app-user-in-item-details [userId]="item.ownerId"></app-user-in-item-details>
+            <p>{{item.address}}, {{item.city}} {{item.country}}</p>
+        </div>
+    </div>
 </div>

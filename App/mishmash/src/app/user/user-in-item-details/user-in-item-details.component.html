@@ -1,0 +1,14 @@
+<div *ngIf="isLoading">Loading...</div>
+<div class="content" *ngIf="!isLoading">
+    <div class="user-info">
+        <div class="rating-avg">{{getRatingAvg()}}</div>
+        <h4 class="username">{{user.username}}</h4>
+    </div>
+    <div class="reviews-count">
+        <i class="fas fa-pencil-alt"></i>
+        <p>{{user.reviews.length}} reviews</p>
+    </div>
+    <div class="btn-container">
+        <button class="message-btn">Send Message</button>
+    </div>
+</div>

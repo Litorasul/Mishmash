@@ -1,9 +1,17 @@
+import { IReviewInItemDetails } from './review';
+
 export interface IUser {
     username: string;
     email: string;
     profilePicUrl: string;
     objectId: string;
     userToken: string;
+}
+
+export interface IUserInItemDetails {
+    username: string;
+    objectId: string;
+    reviews: IReviewInItemDetails[];
 }
 
 export interface ILoginCredentials {
