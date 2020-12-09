@@ -1,12 +1,27 @@
-<nav>
-    <a routerLink="/">Home</a>
-    <ul>
-        <li><a routerLink="/user/login">Login</a></li>
-        <li><a routerLink="/user/register">Register</a></li>
-        <li><a routerLink="/user/profile">Profile</a></li>
-        <li *ngIf="isLogged">
-            <button (click)="logoutHandler()">Logout</button>
-            <button routerLink="/sell">Sell Item</button>
-        </li>
-    </ul>
-</nav>
+<header class="header">
+    <div class="content">
+        <div class="logo">
+            <a routerLink="/">
+                <img src="../../../assets/MishmashLogo1.svg" alt="Logo">
+            </a>
+        </div>
+        <button *ngIf="isLogged" class="sell-btn" routerLink="/sell">
+            <i class="fas fa-plus"></i>
+            Sell Item
+        </button>
+        <nav>
+            <ul>
+                <li *ngIf="!isLogged"><a routerLink="/user/login">Login</a></li>
+                <li *ngIf="!isLogged"><a routerLink="/user/register">Register</a></li>
+                <li *ngIf="isLogged">
+                    <a routerLink="/user/profile">
+                        <span class="user-icon"><i class="fas fa-user"></i></span> {{user?.username}}
+                    </a>
+                </li>
+                <li *ngIf="isLogged">
+                    <a href="#" (click)="logoutHandler($event)">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

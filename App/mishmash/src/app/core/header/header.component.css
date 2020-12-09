@@ -1,0 +1,64 @@
+.header {
+    width: 100%;
+    background-color: #5D2D50;
+    color: #FFFBEC;
+    height: 80px;
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 10px;
+}
+
+.logo {
+    align-self: center;
+    width: 180px;
+    padding-top: 5px;
+}
+
+.logo>a>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: #FFFBEC;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    margin: 0 10px;
+}
+
+.sell-btn {
+    border: none;
+    border-radius: 10px;
+    background-color: #FB7489;
+    color: #FFFBEC;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 18px;
+}
+
+.sell-btn:hover {
+    cursor: pointer;
+    background-color: #FC9EAC;
+}
+
+.user-icon {
+    border-radius: 50%;
+    background-color: #FFFBEC;
+    color: #5D2D50;
+    margin: 0 3px;
+    padding: 4px 6px;
+}

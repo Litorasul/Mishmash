@@ -1,0 +1,36 @@
+.footer {
+    width: 100%;
+    background-color: #5D2D50;
+    color: #FFFBEC;
+    height: 80px;
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 10px;
+}
+
+a {
+    color: #FFFBEC;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    margin: 0 5px;
+    font-size: 27px;
+}
+
+.text {
+    padding-top: 6px;
+    font-size: 14px;
+    font-style: italic;
+}
