@@ -6,7 +6,7 @@ export interface IItemInList {
     price: number;
     name: string;
     objectId: string;
-    thumbnailUrl: string;
+    pictures: IPicture[];
 }
 
 export interface IItemDetails {

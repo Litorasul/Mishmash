@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IItemInList } from 'src/app/shared/interfaces';
 
 @Component({
@@ -10,9 +11,15 @@ export class ListComponent implements OnInit {
 
   @Input()
   itemsList!: IItemInList[];
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  clickHandler(itemId: string): void {
+    this.router.navigate([`details/${itemId}`]);
   }
 
 }

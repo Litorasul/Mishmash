@@ -27,7 +27,7 @@ export class ItemsService {
   }
 
   getItemsPerCategory(id: string): Observable<IItemInList[]> {
-    return this.http.get<IItemInList[]>(`${baseUrl}${itemsPerCategoryUrl}'${id}'`);
+    return this.http.get<IItemInList[]>(`${baseUrl}${itemsPerCategoryUrl}'${id}'&loadRelations=pictures`);
   }
   getItemDetails(id: string): Observable<IItemDetails> {
     return this.http.get<IItemDetails>(`${baseUrl}${itemDetailsUrl}${id}${loadPicturesUrl}`);

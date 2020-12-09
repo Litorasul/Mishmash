@@ -1,7 +1,12 @@
-<div>
-    <a [routerLink]="['/details', item.objectId]">{{item.name}}</a>
+<div class="img-container">
+    <img src={{item.pictures[0].url}} alt="thumbhail">
 </div>
-<span>{{item.city}}, </span>
-<span>{{item.country}}</span>
-<div>{{item.price}}</div>
-<div>{{item.thumbnailUrl}}</div>
+<div class="content">
+
+    <div class="name" [routerLink]="['/details', item.objectId]">{{item.name}}</div>
+    <div class="price">EUR {{item.price}}</div>
+    <div class="address">
+        <span>{{item.city}}, </span>
+        <span>{{item.country}}</span>
+    </div>
+</div>

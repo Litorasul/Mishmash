@@ -1,0 +1,19 @@
+.category-name {
+    width: fit-content;
+    margin: 20px auto;
+    padding-bottom: 10px;
+    font-size: 40px;
+    color: #1E606D;
+    border-bottom: 3px solid #FB7489;
+}
+
+.container {
+    width: 70%;
+    height: 500px;
+    margin: 30px auto 163px auto;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
