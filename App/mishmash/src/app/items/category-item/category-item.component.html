@@ -1,3 +1,4 @@
-<div>
-    <a [routerLink]="['/categories', category.objectId]">{{category.name}}</a>
+<div class="content">
+    <span class="icon"><i [ngClass]="category.icon"></i></span>
+    <span class="text"><a [routerLink]="['/categories', category.objectId]">{{category.name}}</a></span>
 </div>
