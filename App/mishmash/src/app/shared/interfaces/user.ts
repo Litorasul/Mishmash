@@ -1,4 +1,4 @@
-import { IReviewInItemDetails } from './review';
+import { IReview, IReviewInItemDetails } from './review';
 
 export interface IUser {
     username: string;
@@ -6,6 +6,17 @@ export interface IUser {
     profilePicUrl: string;
     objectId: string;
     userToken: string;
+}
+
+export interface IUserInProfile {
+    username: string;
+    email: string;
+    profilePicUrl: string;
+    objectId: string;
+    address: string;
+    city: string;
+    country: string;
+    reviews: IReview[];
 }
 
 export interface IUserInItemDetails {

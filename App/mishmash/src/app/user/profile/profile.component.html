@@ -1,1 +1,43 @@
-<p>profile works!</p>
+<div *ngIf="isLoading">Loading...</div>
+<div class="container" *ngIf="!isLoading">
+    <div class="user-info">
+        <div class="user-img-container">
+            <img src={{user.profilePicUrl}} alt="Profile picture">
+        </div>
+        <div class="user-name">
+            <div class="rating-avg">{{getRatingAvg()}}</div>
+            <h4 class="username">{{user.username}}</h4>
+        </div>
+        <div class="own-profile" *ngIf="isOwnProfile">
+            <div class="own-email">
+                <i class="far fa-envelope"></i>
+                <span>{{user.email}}</span>
+            </div>
+            <div class="own-address">
+                <i class="fas fa-home"></i>
+                <p class="own-address-address">{{user.address}}</p>
+                <span class="own-address-city">{{user.city}}, </span>
+                <span class="own-address-country">{{user.country}}</span>
+            </div>
+        </div>
+        <div class="other-profile" *ngIf="!isOwnProfile">
+            <div class="short-address">
+                <span class="short-address-city">
+                    {{user.city}}, 
+                </span>
+                <span class="short-address-country">
+                    {{user.country}}
+                </span>
+                <button class="message-btn">Send Message</button>
+                <button class="all-itens-btn">Items for sale</button>
+            </div>
+        </div>
+    </div>
+    <div class="reviews">
+        <h4 class="reviews-title">Reviews</h4>
+        <div *ngFor="let review of user.reviews">
+            <div class="rating">{{review.rating}}</div>
+            <p class="review-text">{{review.text}}</p>
+        </div>
+    </div>
+</div>

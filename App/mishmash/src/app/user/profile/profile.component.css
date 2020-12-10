@@ -1,0 +1,12 @@
+.user-info {
+    width: 300px;
+}
+
+.user-img-container {
+    width: 100%
+}
+
+.user-img-container>img {
+    width: 100%;
+    object-fit: contain;
+}

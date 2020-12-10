@@ -18,6 +18,7 @@
 }
 
 .username {
+    text-decoration: none;
     margin: 0;
     margin-left: 20px;
     font-size: 40px;

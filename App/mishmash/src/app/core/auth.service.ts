@@ -29,6 +29,11 @@ export class AuthService {
     return !!this.tokenService.getToken();
   }
 
+  isOwner(id: string): boolean {
+    const logedUser = this.tokenService.getUser();
+    return logedUser?.objectId === id;
+  }
+
   login(credentials: ILoginCredentials): Observable<any> {
     return this.http.post(`${baseUrl}${loginUrl}`, {
       login: credentials.email,

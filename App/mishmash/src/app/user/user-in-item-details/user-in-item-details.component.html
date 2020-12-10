@@ -2,7 +2,7 @@
 <div class="content" *ngIf="!isLoading">
     <div class="user-info">
         <div class="rating-avg">{{getRatingAvg()}}</div>
-        <h4 class="username">{{user.username}}</h4>
+        <a [routerLink]="['/user/profile', user.objectId]" class="username">{{user.username}}</a>
     </div>
     <div class="reviews-count">
         <i class="fas fa-pencil-alt"></i>

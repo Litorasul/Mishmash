@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { IUserInItemDetails } from '../shared/interfaces';
+import { IUserInItemDetails, IUserInProfile } from '../shared/interfaces';
 
 const baseUrl = environment.apiBaseUrl;
 const userDataUrl = environment.apiUsersData;
@@ -18,5 +18,9 @@ export class UserService {
 
     getUserInItemDetails(id: string): Observable<IUserInItemDetails> {
       return this.http.get<IUserInItemDetails>(`${baseUrl}${userDataUrl}${id}${loadReviews}`);
+    }
+
+    getUserInProfile(id: string): Observable<IUserInProfile> {
+      return this.http.get<IUserInProfile>(`${baseUrl}${userDataUrl}${id}${loadReviews}`);
     }
 }
