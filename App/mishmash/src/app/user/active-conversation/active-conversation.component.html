@@ -1,0 +1,17 @@
+<div *ngIf="!conversation">
+    <h1>Choose conversation!</h1>
+</div>
+<div *ngIf="conversation">
+    <div *ngFor="let message of conversation.messages">
+        <h5>{{message.ownerUserName}}</h5>
+        <p>{{message.text}}</p>
+        <p>{{message.created | date:'medium'}}</p>
+    </div>
+    <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
+        <input #userEmail="ngModel" type="text" name="message" id="message" placeholder="Type a message..." ngModel required>
+        <p *ngIf="userEmail.touched && userEmail.errors?.required" style="color: red;">
+            Text is required!
+        </p>
+        <button [disabled]="f.invalid"><i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>

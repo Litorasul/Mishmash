@@ -1,3 +1,4 @@
+import { IConversation } from './message';
 import { IReview, IReviewInItemDetails } from './review';
 
 export interface IUser {
@@ -6,6 +7,11 @@ export interface IUser {
     profilePicUrl: string;
     objectId: string;
     userToken: string;
+}
+
+export interface IUserConversations {
+    username: string;
+    conversations: IConversation[];
 }
 
 export interface IUserInProfile {

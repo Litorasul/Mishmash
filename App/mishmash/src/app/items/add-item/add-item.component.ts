@@ -74,7 +74,6 @@ export class AddItemComponent implements OnInit {
             .subscribe(
               {
                 next: (d: any) => {
-                  console.log(d);
                   this.router.navigate(['/']);
                 },
                 error: (err) => {

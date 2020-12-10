@@ -1,0 +1,14 @@
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="!isLoading">
+    <div *ngIf="receivedConversations" class="received">
+        <div *ngFor="let conv of  receivedConversations">
+            <button (click)="activeConversationChangeHandler(conv)">{{conv.ownerUserName}}</button>
+        </div>
+    </div>
+    <div *ngIf="startedConversations" class="started">
+        <div *ngFor="let conv of startedConversations">
+            <button (click)="activeConversationChangeHandler(conv)">{{conv.receiverUserName}}</button>
+        </div>
+    </div>
+    <app-active-conversation [conversation]="activeConversation"></app-active-conversation>
+</div>
