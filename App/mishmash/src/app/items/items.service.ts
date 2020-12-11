@@ -48,4 +48,8 @@ export class ItemsService {
   postItemInCategoryRelation(categoryIds: string[], itemId: string): Observable<any> {
     return this.http.post(`${baseUrl}${itemDetailsUrl}${itemId}/category`, categoryIds, httpOptions);
   }
+
+  deleteItem(id: string): Observable<any> {
+    return this.http.delete(`${baseUrl}${itemDetailsUrl}${id}`);
+  }
 }

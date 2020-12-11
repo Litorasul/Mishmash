@@ -19,7 +19,20 @@
         </div>
         <div *ngIf="isUserLogged" class="authorized-container">
             <app-user-in-item-details [userId]="item.ownerId"></app-user-in-item-details>
-            <p>{{item.address}}, {{item.city}} {{item.country}}</p>
+            <div class="address">
+                <i class="fas fa-home"></i>
+                <div>
+                    <div class="address-adress">
+                        {{item.address}}
+                    </div>
+                    <div class="address-country">
+                        {{item.city}}, {{item.country}}
+                    </div>
+                </div>
+            </div>
+            <div class="delete-container">
+                <button class="delete" *ngIf="isOwner" (click)="deleteEventhandler()">Delete Item</button>
+            </div>
         </div>
     </div>
 </div>

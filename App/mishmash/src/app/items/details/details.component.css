@@ -74,3 +74,45 @@
     cursor: pointer;
     background-color: #FC9EAC;
 }
+
+.address {
+    display: flex;
+    justify-content: space-around;
+    margin: 70px 0;
+}
+
+.address>i {
+    font-size: 50px;
+    color: #FB7489;
+}
+
+.address-adress,
+.address-country {
+    font-size: 25px;
+    color: #1E606D;
+}
+
+.address-country {
+    font-weight: 500;
+}
+
+.delete-container {
+    text-align: center;
+}
+
+.delete {
+    width: 250px;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFBEC;
+    background-color: #1E606D;
+}
+
+.delete:hover {
+    cursor: pointer;
+    background-color: #629099;
+}

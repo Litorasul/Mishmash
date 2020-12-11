@@ -25,7 +25,7 @@
         </div>
         <div>
             <label for="category"><i class="fas fa-object-group"></i></label>
-            <select #category="ngModel" name="category" id="category" placeholder="Choose a category" ngModel required>
+            <select #category="ngModel" name="category" id="category" ngModel required>
                 <option *ngFor="let cat of categories" value={{cat.objectId}}> 
                     {{cat.name}}
                 </option>
