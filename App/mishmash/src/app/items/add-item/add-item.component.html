@@ -1,50 +1,52 @@
-<form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
-    <div>
-        <label for="name"><span><i class="fas fa-tag"></i></span></label>
-        <input #userName="ngModel" type="text" name="name" id="name" placeholder="Type item name..." ngModel required minlength="4">
-        <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
-            Name is required!
-        </p>
-        <p *ngIf="userName.touched && userName.errors?.minlength" style="color: red;">
-            Name must be at least 4 characters!
-        </p>
-    </div>
-    <div>
-        <label for="price"><span><i class="fas fa-dollar-sign"></i></span></label>
-        <input #userName="ngModel" type="number" name="price" id="price" placeholder="Type item price..." ngModel required>
-        <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
-            Price is required!
-        </p>
-    </div>
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
+        <div>
+            <label for="name"><span><i class="fas fa-tag"></i></span></label>
+            <input #userName="ngModel" type="text" name="name" id="name" placeholder="Type item name..." ngModel required minlength="4">
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.required">
+                Name is required!
+            </p>
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.minlength">
+                Name must be at least 4 characters!
+            </p>
+        </div>
+        <div>
+            <label for="price"><span><i class="fas fa-dollar-sign"></i></span></label>
+            <input #userName="ngModel" type="number" name="price" id="price" placeholder="Type item price..." ngModel required>
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.required">
+                Price is required!
+            </p>
+        </div>
 
-    <div>
-        <label for="description"><span><i class="fas fa-expand-arrows-alt"></i></span></label>
-        <input #userName="ngModel" type="text" name="description" id="description" placeholder="Type item description..." ngModel>
-    </div>
+        <div>
+            <label for="description"><span><i class="fas fa-expand-arrows-alt"></i></span></label>
+            <input #userName="ngModel" type="text" name="description" id="description" placeholder="Type item description..." ngModel>
+        </div>
 
-    <div>
-        <label for="address"><span><i class="fas fa-map-marker-alt"></i></span></label>
-        <input #userName="ngModel" type="text" name="address" id="address" placeholder="Type item address..." ngModel required>
-        <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
-            Address is required!
-        </p>
-    </div>
-    <div>
-        <label for="city"><span><i class="fas fa-city"></i></span></label>
-        <input #userName="ngModel" type="text" name="city" id="city" placeholder="Type item city..." ngModel required>
-        <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
-            City is required!
-        </p>
-    </div>
-    <div>
-        <label for="country"><span><i class="fas fa-globe-europe"></i></span></label>
-        <input #userName="ngModel" type="text" name="country" id="country" placeholder="Type item country..." ngModel required>
-        <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
-            Country is required!
-        </p>
-    </div>
-    <button id="upload_widget" (click)="openUploadHandler($event)" class="cloudinary-button">
-      Upload pictures
+        <div>
+            <label for="address"><span><i class="fas fa-map-marker-alt"></i></span></label>
+            <input #userName="ngModel" type="text" name="address" id="address" placeholder="Type item address..." ngModel required>
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.required">
+                Address is required!
+            </p>
+        </div>
+        <div>
+            <label for="city"><span><i class="fas fa-city"></i></span></label>
+            <input #userName="ngModel" type="text" name="city" id="city" placeholder="Type item city..." ngModel required>
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.required">
+                City is required!
+            </p>
+        </div>
+        <div>
+            <label for="country"><span><i class="fas fa-globe-europe"></i></span></label>
+            <input #userName="ngModel" type="text" name="country" id="country" placeholder="Type item country..." ngModel required>
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.required">
+                Country is required!
+            </p>
+        </div>
+        <button class="open-widget-btn" id="upload_widget" (click)="openUploadHandler($event)">
+      Add pictures
     </button>
-    <button type="submit" [disabled]="f.invalid">Sell</button>
-</form>
+        <button class="submit-btn" type="submit" [disabled]="f.invalid">Sell</button>
+    </form>
+</div>

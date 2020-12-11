@@ -1,42 +1,44 @@
-<form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
 
-    <div>
-        <label for="username"><span><i class="fas fa-user-tag"></i></span></label>
-        <input #userName="ngModel" type="text" name="username" id="username" placeholder="Type your username..." ngModel required minlength="4">
-        <p *ngIf="userName.touched && userName.errors?.required" style="color: red;">
-            Username is required!
-        </p>
-        <p *ngIf="userName.touched && userName.errors?.minlength" style="color: red;">
-            Username must be at least 4 characters!
-        </p>
-    </div>
+        <div>
+            <label for="username"><span><i class="fas fa-user-tag"></i></span></label>
+            <input #userName="ngModel" type="text" name="username" id="username" placeholder="Type your username..." ngModel required minlength="4">
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.required">
+                Username is required!
+            </p>
+            <p class="validation-message" *ngIf="userName.touched && userName.errors?.minlength">
+                Username must be at least 4 characters!
+            </p>
+        </div>
 
-    <div>
-        <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-        <input #userEmail="ngModel" type="text" name="email" id="email" placeholder="Type your email..." ngModel required email>
-        <p *ngIf="userEmail.touched && userEmail.errors?.required" style="color: red;">
-            Email is required!
-        </p>
-        <p *ngIf="userEmail.touched && userEmail.errors?.email" style="color: red;">
-            Email is not valid!
-        </p>
-    </div>
+        <div>
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input #userEmail="ngModel" type="text" name="email" id="email" placeholder="Type your email..." ngModel required email>
+            <p class="validation-message" *ngIf="userEmail.touched && userEmail.errors?.required">
+                Email is required!
+            </p>
+            <p class="validation-message" *ngIf="userEmail.touched && userEmail.errors?.email">
+                Email is not valid!
+            </p>
+        </div>
 
-    <div>
-        <label for="password"><span><i class="fas fa-lock"></i></span></label>
-        <input #userPassword="ngModel" type="password" name="password" id="password" placeholder="Type your password..." ngModel required minlength="5">
-        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error" style="color: red;">
-            Password is required!
-        </p>
-        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error" style="color: red;">
-            Password must be at least 5 characters!
-        </p>
-    </div>
+        <div>
+            <label for="password"><span><i class="fas fa-lock"></i></span></label>
+            <input #userPassword="ngModel" type="password" name="password" id="password" placeholder="Type your password..." ngModel required minlength="5">
+            <p class="validation-message" *ngIf="userPassword.touched && userPassword.errors?.required">
+                Password is required!
+            </p>
+            <p class="validation-message" *ngIf="userPassword.touched && userPassword.errors?.minlength">
+                Password must be at least 5 characters!
+            </p>
+        </div>
 
-    <button [disabled]="f.invalid">Register</button>
+        <button [disabled]="f.invalid">Register</button>
 
-    <p>
-        Have an account?
-        <a routerLink="/user/login">Sign in</a>
-    </p>
-</form>
+        <p class="after">
+            Have an account?
+            <a routerLink="/user/login">Sign in</a>
+        </p>
+    </form>
+</div>
