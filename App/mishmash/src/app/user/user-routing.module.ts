@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { UserAllItemsComponent } from './user-all-items/user-all-items.component';
 
 const routes: Routes = [
     {
@@ -24,6 +25,10 @@ const routes: Routes = [
             {
                 path: 'messages/:id',
                 component: MessagesComponent
+            },
+            {
+                path: 'items/:id',
+                component: UserAllItemsComponent
             }
         ]
     }

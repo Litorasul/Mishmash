@@ -11,11 +11,9 @@ import { SlideshowModule } from 'ng-simple-slideshow';
 
 import { CategoriesComponent } from './categories/categories.component';
 import { DetailsComponent } from './details/details.component';
-import { ListComponent } from './list/list.component';
 import { SearchComponent } from './search/search.component';
 import { SharedModule } from '../shared/shared.module';
 import { CategoryItemComponent } from './category-item/category-item.component';
-import { ListItemComponent } from './list-item/list-item.component';
 import { ItemsPerCategoryPageComponent } from './items-per-category-page/items-per-category-page.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { from } from 'rxjs';
@@ -26,10 +24,8 @@ import { UserModule } from '../user/user.module';
   declarations: [
     CategoriesComponent,
     DetailsComponent,
-    ListComponent,
     SearchComponent,
     CategoryItemComponent,
-    ListItemComponent,
     ItemsPerCategoryPageComponent,
     AddItemComponent
   ],
@@ -46,7 +42,6 @@ import { UserModule } from '../user/user.module';
   exports: [
     CategoriesComponent,
     DetailsComponent,
-    ListComponent,
     SearchComponent,
     ItemsPerCategoryPageComponent,
     AddItemComponent

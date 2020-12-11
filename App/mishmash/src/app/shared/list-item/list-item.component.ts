@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IItemInList } from 'src/app/shared/interfaces';
 
 @Component({
@@ -6,15 +6,10 @@ import { IItemInList } from 'src/app/shared/interfaces';
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.css']
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent {
 
   @Input()
   item!: IItemInList;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
-
 
 }

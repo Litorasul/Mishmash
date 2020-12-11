@@ -12,6 +12,7 @@ const itemDetailsUrl = environment.apiItemDetails;
 const loadPicturesUrl = environment.apiLoadPictures;
 const itemForSaleUrl = environment.apiItemForSale;
 const addPictureUrl = environment.apiAddPicture;
+const itemsPerUserUrl = environment.apiItemsPerUser;
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -31,6 +32,10 @@ export class ItemsService {
   }
   getItemDetails(id: string): Observable<IItemDetails> {
     return this.http.get<IItemDetails>(`${baseUrl}${itemDetailsUrl}${id}${loadPicturesUrl}`);
+  }
+
+  getItemsPerUser(id: string): Observable<IItemInList[]> {
+    return this.http.get<IItemInList[]>(`${baseUrl}${itemsPerUserUrl}'${id}'&loadRelations=pictures`);
   }
 
   postItemForSale(item: IItemForSale): Observable<any> {

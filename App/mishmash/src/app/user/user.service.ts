@@ -40,6 +40,7 @@ export class UserService {
     getStartedConversationsForUser(id: string): Observable<IConversation[]> {
       return this.http.get<IConversation[]>(`${baseUrl}${conversationDataUrl}${whereOwnerId}'${id}'${loadMessages}`);
     }
+
     postMessage(body: any): Observable<IMessage> {
       return this.http.post<IMessage>(`${baseUrl}${addMessageUrl}`, body, httpOptions);
     }

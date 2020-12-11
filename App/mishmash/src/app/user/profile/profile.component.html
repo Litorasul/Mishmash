@@ -30,8 +30,8 @@
                     {{user.country}}
                 </span>
             </div>
-            <button class="message-btn">Send Message</button>
-            <button class="all-itens-btn">Items for sale</button>
+            <button class="message-btn" (click)="sendMessageHandler()">Send Message</button>
+            <button class="all-items-btn" [routerLink]="['/user/items', user.objectId]" [queryParams]="{username: user.username}">Items for sale</button>
         </div>
     </div>
     <div class="reviews">

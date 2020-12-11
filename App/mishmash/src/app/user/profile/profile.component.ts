@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthService } from 'src/app/core/auth.service';
-import { IUserInProfile } from 'src/app/shared/interfaces';
+import { TokenService } from 'src/app/core/token.service';
+import { IConversationToCreate, IUser, IUserInProfile } from 'src/app/shared/interfaces';
 import { UserService } from '../user.service';
 
 @Component({
@@ -18,12 +19,14 @@ export class ProfileComponent implements OnInit {
   isOwnProfile = false;
 
   user!: IUserInProfile;
+  currentUser!: IUser | null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private tokenService: TokenService
   ) {
     this.isLoading = true;
     this.id = this.activatedRoute.snapshot.params.id;
@@ -43,6 +46,7 @@ export class ProfileComponent implements OnInit {
     this.userService.getUserInProfile(this.id).subscribe(user => {
       this.user = user;
       this.isOwnProfile = this.authService.isOwner(user.objectId);
+      this.currentUser = this.tokenService.getUser();
       this.isLoading = false;
     });
   }
@@ -53,6 +57,15 @@ export class ProfileComponent implements OnInit {
     }
     const result = this.user.reviews.map(r => r.rating).reduce((a, b) => (a + b)) / this.user.reviews.length;
     return result.toFixed(1);
+  }
+
+  sendMessageHandler(): void {
+    const conversation: IConversationToCreate = {
+      ownerUserName: this.currentUser?.username,
+      receiverUserName: this.user.username
+    };
+    const result = this.userService.createConversation(conversation, this.user.objectId);
+    this.router.navigate([`user/messages/${this.currentUser?.objectId}`]);
   }
 
 }
