@@ -1,0 +1,64 @@
+.container-choose {
+    text-align: center;
+    color: #1E606D;
+}
+
+.choose {
+    font-weight: 400;
+}
+
+.container-active {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.active-message {
+    margin: 15px 0;
+    color: #1E606D;
+}
+
+.active-date {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.active-name {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.current {
+    color: #5D2D50;
+}
+
+.input {
+    width: 300px;
+    border: none;
+    padding: 5px;
+    border-bottom: 2px solid #FB7489;
+    background-color: #FFFBEC;
+    color: #1E606D;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+}
+
+.send-btn {
+    padding: 5px 9px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #FB7489;
+    color: #FFFBEC;
+}
+
+.send-btn:disabled {
+    cursor: no-drop;
+    background-color: #FC9EAC;
+}

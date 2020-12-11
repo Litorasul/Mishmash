@@ -1,14 +1,20 @@
 <div *ngIf="isLoading">Loading...</div>
-<div *ngIf="!isLoading">
-    <div *ngIf="receivedConversations" class="received">
-        <div *ngFor="let conv of  receivedConversations">
-            <button (click)="activeConversationChangeHandler(conv)">{{conv.ownerUserName}}</button>
+<div class="container" *ngIf="!isLoading">
+    <div class="controls">
+        <div *ngIf="receivedConversations" class="received">
+            <div *ngFor="let conv of  receivedConversations" class="input-container">
+                <input type="radio" id={{conv.ownerUserName}} name="conversations" class="radio-input" (click)="activeConversationChangeHandler(conv)">
+                <label for={{conv.ownerUserName}}>{{conv.ownerUserName}}</label>
+            </div>
+        </div>
+        <div *ngIf="startedConversations" class="started ">
+            <div *ngFor="let conv of startedConversations" class="input-container">
+                <input type="radio" id={{conv.receiverUserName}} name="conversations" class="radio-input" (click)="activeConversationChangeHandler(conv)">
+                <label for={{conv.receiverUserName}}>{{conv.receiverUserName}}</label>
+            </div>
         </div>
     </div>
-    <div *ngIf="startedConversations" class="started">
-        <div *ngFor="let conv of startedConversations">
-            <button (click)="activeConversationChangeHandler(conv)">{{conv.receiverUserName}}</button>
-        </div>
+    <div class="content">
+        <app-active-conversation [conversation]="activeConversation"></app-active-conversation>
     </div>
-    <app-active-conversation [conversation]="activeConversation"></app-active-conversation>
 </div>

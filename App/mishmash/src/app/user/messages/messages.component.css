@@ -1,0 +1,40 @@
+.container {
+    width: 50%;
+    margin: 23px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    width: 300px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #1E606D;
+    min-height: 730px;
+    border-right: 3px solid #FB7489;
+}
+
+.input-container {
+    margin: 10px;
+    text-align: center;
+}
+
+input[type=radio] {
+    display: none;
+    margin: 10px;
+}
+
+input[type=radio]+label {
+    margin: 20px auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+input[type=radio]:checked+label {
+    background-color: rgba(93, 45, 80, 0.2);
+}
+
+.content {
+    flex-grow: 1;
+    min-height: 730px;
+}

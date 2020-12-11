@@ -1,17 +1,17 @@
-<div *ngIf="!conversation">
-    <h1>Choose conversation!</h1>
+<div *ngIf="!conversation" class="container-choose">
+    <h1 class="choose">Choose conversation!</h1>
 </div>
-<div *ngIf="conversation">
-    <div *ngFor="let message of conversation.messages">
-        <h5>{{message.ownerUserName}}</h5>
-        <p>{{message.text}}</p>
-        <p>{{message.created | date:'medium'}}</p>
+<div *ngIf="conversation" class="container-active">
+    <div *ngFor="let message of conversation.messages" [className]="message.ownerUserName === user?.username ? 'active-message current' : 'active-message other'">
+        <p class="active-date">{{message.created | date:'medium'}}</p>
+        <h5 class="active-name">{{message.ownerUserName}}</h5>
+        <p class="active-text">{{message.text}}</p>
     </div>
     <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
-        <input #userEmail="ngModel" type="text" name="message" id="message" placeholder="Type a message..." ngModel required>
-        <p *ngIf="userEmail.touched && userEmail.errors?.required" style="color: red;">
+        <input #userMessage="ngModel" type="text" name="message" id="message" class="input" placeholder="Type a message..." ngModel required>
+        <button type="submit" class="send-btn" [disabled]="f.invalid"><i class="fas fa-paper-plane"></i></button>
+        <p *ngIf="userMessage.touched && userMessage.errors?.required" style="color: #FB7489;">
             Text is required!
         </p>
-        <button [disabled]="f.invalid"><i class="fas fa-paper-plane"></i></button>
     </form>
 </div>

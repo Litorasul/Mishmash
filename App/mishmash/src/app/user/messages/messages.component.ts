@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
+import { TokenService } from 'src/app/core/token.service';
 
 import { IConversation } from 'src/app/shared/interfaces';
 import { UserService } from '../user.service';
@@ -26,7 +27,8 @@ export class MessagesComponent implements OnInit {
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private tokenService: TokenService
   ) {
     this.isLoading = true;
     this.userId = this.activatedRoute.snapshot.params.id;

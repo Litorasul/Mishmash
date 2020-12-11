@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { IUser } from '../shared/interfaces';
+import { IConversation, IUser } from '../shared/interfaces';
 
 const TOKEN_KEY = 'user-token';
 const USER_KEY = 'user-key';
+const CONVERSATION_KEY = 'conversation-key';
 
 @Injectable()
 export class TokenService {
@@ -34,5 +35,21 @@ export class TokenService {
       return null;
     }
     return JSON.parse(user) as IUser;
+  }
+
+  public saveConversation(conversation: IConversation): void {
+    window.localStorage.removeItem(CONVERSATION_KEY);
+    window.localStorage.setItem(CONVERSATION_KEY, JSON.stringify(conversation));
+  }
+
+  public getConversation(): IConversation | null {
+    const conv = localStorage.getItem(CONVERSATION_KEY);
+    if (conv) {
+      window.localStorage.removeItem(CONVERSATION_KEY);
+    }
+    if (!conv) {
+      return null;
+    }
+    return JSON.parse(conv) as IConversation;
   }
 }
