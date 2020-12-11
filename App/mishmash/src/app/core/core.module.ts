@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from '../user/user.module';
 import { ItemsModule } from '../items/items.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -15,7 +16,7 @@ import { ItemsModule } from '../items/items.module';
   declarations: [
     HeaderComponent, 
     FooterComponent, 
-    HomeComponent
+    HomeComponent, NotFoundComponent
   ],
   imports: [
     CommonModule,

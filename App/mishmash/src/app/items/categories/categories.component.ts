@@ -11,12 +11,15 @@ import { ItemsService } from '../items.service';
 export class CategoriesComponent implements OnInit {
 
   categoriesList: ICategory[] = [];
+  isLoading = false;
 
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.itemsService.getCategories().subscribe(categoriesList => {
       this.categoriesList = categoriesList;
+      this.isLoading = false;
     });
   }
 

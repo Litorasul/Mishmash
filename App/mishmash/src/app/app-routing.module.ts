@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './core/home/home.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 import { AddItemComponent } from './items/add-item/add-item.component';
 import { DetailsComponent } from './items/details/details.component';
 import { ItemsPerCategoryPageComponent } from './items/items-per-category-page/items-per-category-page.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'sell',
     component: AddItemComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
