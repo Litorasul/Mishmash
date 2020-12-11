@@ -1,12 +1,157 @@
+.container-loading {
+    font-size: 40px;
+    font-weight: 700;
+    width: fit-content;
+    margin: 50px auto;
+}
+
+.container-content {
+    width: 70%;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-around;
+    min-height: 726px;
+}
+
 .user-info {
-    width: 300px;
+    text-align: start;
+}
+
+.user-name {
+    display: flex;
+    padding: 10px 0;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.rating-avg {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #FFFBEC;
+    background-color: #5D2D50;
+}
+
+.username {
+    text-decoration: none;
+    margin: 0;
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: 500;
+    color: #1E606D;
+}
+
+.user-info {
+    width: 400px;
 }
 
 .user-img-container {
-    width: 100%
+    width: 80%;
+    margin: 0 auto
 }
 
 .user-img-container>img {
     width: 100%;
     object-fit: contain;
+}
+
+i {
+    color: #FB7489;
+    font-size: 30px;
+}
+
+.own-email>i {
+    margin: 10px 5px;
+}
+
+.own-email>span {
+    color: #1E606D;
+    font-size: 30px;
+}
+
+.own-address {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.own-address>p {
+    margin: 0 10px;
+    font-size: 30px;
+    color: #1E606D;
+}
+
+.own-address>span {
+    margin: 0 10px;
+    font-size: 30px;
+    color: #1E606D;
+}
+
+.other-profile {
+    text-align: center;
+}
+
+.short-address {
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.short-address>span {
+    font-size: 30px;
+    color: #1E606D;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFBEC;
+}
+
+.message-btn {
+    background-color: #FB7489;
+}
+
+.all-itens-btn {
+    background-color: #1E606D;
+}
+
+.reviews {
+    text-align: center;
+    margin: 20px;
+}
+
+.reviews-title {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #1E606D;
+    border-bottom: 2px solid #FB7489;
+}
+
+.review-container {
+    margin: 30px 0;
+}
+
+.rating {
+    width: fit-content;
+    margin: 5px auto;
+    padding: 10px 15px;
+    background-color: #5D2D50;
+    color: #FFFBEC;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.review-text {
+    color: #1E606D;
+    font-size: 18px;
 }
