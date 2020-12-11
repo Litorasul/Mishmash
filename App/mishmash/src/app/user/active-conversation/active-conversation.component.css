@@ -62,3 +62,7 @@
     cursor: no-drop;
     background-color: #FC9EAC;
 }
+
+.validation-message {
+    color: #FB7489;
+}

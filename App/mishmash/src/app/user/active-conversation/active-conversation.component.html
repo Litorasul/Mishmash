@@ -10,7 +10,7 @@
     <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
         <input #userMessage="ngModel" type="text" name="message" id="message" class="input" placeholder="Type a message..." ngModel required>
         <button type="submit" class="send-btn" [disabled]="f.invalid"><i class="fas fa-paper-plane"></i></button>
-        <p *ngIf="userMessage.touched && userMessage.errors?.required" style="color: #FB7489;">
+        <p class="validation-message" *ngIf="userMessage.touched && userMessage.errors?.required">
             Text is required!
         </p>
     </form>

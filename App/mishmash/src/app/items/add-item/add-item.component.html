@@ -1,4 +1,5 @@
-<div class="container">
+<div *ngIf="isLoading" class="container-loading">Loading...</div>
+<div *ngIf="!isLoading" class="container">
     <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
         <div>
             <label for="name"><span><i class="fas fa-tag"></i></span></label>
@@ -22,7 +23,17 @@
             <label for="description"><span><i class="fas fa-expand-arrows-alt"></i></span></label>
             <input #userName="ngModel" type="text" name="description" id="description" placeholder="Type item description..." ngModel>
         </div>
-
+        <div>
+            <label for="category"><i class="fas fa-object-group"></i></label>
+            <select #category="ngModel" name="category" id="category" placeholder="Choose a category" ngModel required>
+                <option *ngFor="let cat of categories" value={{cat.objectId}}> 
+                    {{cat.name}}
+                </option>
+            </select>
+            <p class="validation-message" *ngIf="category.touched && category.errors?.required">
+                Pleace choose category.
+            </p>
+        </div>
         <div>
             <label for="address"><span><i class="fas fa-map-marker-alt"></i></span></label>
             <input #userName="ngModel" type="text" name="address" id="address" placeholder="Type item address..." ngModel required>

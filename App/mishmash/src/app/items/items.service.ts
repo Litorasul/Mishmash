@@ -44,4 +44,8 @@ export class ItemsService {
   postPicturesToItemRelation(pictureIds: string[], itemId: string): Observable<any> {
     return this.http.post(`${baseUrl}${itemDetailsUrl}${itemId}/pictures`, pictureIds, httpOptions);
   }
+
+  postItemInCategoryRelation(categoryIds: string[], itemId: string): Observable<any> {
+    return this.http.post(`${baseUrl}${itemDetailsUrl}${itemId}/category`, categoryIds, httpOptions);
+  }
 }
