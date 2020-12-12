@@ -107,11 +107,13 @@ button {
     color: #FFFBEC;
 }
 
-.message-btn {
+.message-btn,
+.review {
     background-color: #FB7489;
 }
 
-.message-btn:hover {
+.message-btn:hover,
+.review:hover {
     cursor: pointer;
     background-color: #FC9EAC;
 }

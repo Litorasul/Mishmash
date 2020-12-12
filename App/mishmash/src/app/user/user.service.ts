@@ -3,7 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { IConversation, IConversationToCreate, IMessage, IUserConversations, IUserInItemDetails, IUserInProfile } from '../shared/interfaces';
+import {
+  IConversation,
+  IConversationToCreate,
+  IMessage,
+  IReview,
+  IReviewWithId,
+  IUserConversations,
+  IUserInItemDetails,
+  IUserInProfile
+   } from '../shared/interfaces';
 
 const baseUrl = environment.apiBaseUrl;
 const userDataUrl = environment.apiUsersData;
@@ -13,6 +22,7 @@ const conversationDataUrl = environment.apiConversationsData;
 const whereOwnerId = environment.apiWhereOwnerId;
 const loadMessages = environment.apiLoadMessages;
 const addMessageUrl = environment.apiAddMessage;
+const addReviewUrl = environment.apiReviewsData;
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -63,5 +73,13 @@ export class UserService {
         }
       );
       return result;
+    }
+
+    postReview(review: IReview): Observable<IReviewWithId> {
+      return this.http.post<IReviewWithId>(`${baseUrl}${addReviewUrl}`, review, httpOptions);
+    }
+
+    postReviewToUserRelation(reviewId: string[], userId: string): Observable<any> {
+      return this.http.put<any>(`${baseUrl}${userDataUrl}${userId}/reviews`, reviewId, httpOptions);
     }
 }

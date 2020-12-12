@@ -1,4 +1,5 @@
 import { RouterModule, Routes} from '@angular/router';
+import { AddReviewComponent } from './add-review/add-review.component';
 
 import { LoginComponent } from './login/login.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
             {
                 path: 'items/:id',
                 component: UserAllItemsComponent
+            },
+            {
+                path: 'review/:id',
+                component: AddReviewComponent
             }
         ]
     }

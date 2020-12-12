@@ -13,6 +13,7 @@ import { ActiveConversationComponent } from './active-conversation/active-conver
 import { UserAllItemsComponent } from './user-all-items/user-all-items.component';
 import { ItemsModule } from '../items/items.module';
 import { SharedModule } from '../shared/shared.module';
+import { AddReviewComponent } from './add-review/add-review.component';
 
 
 
@@ -27,6 +28,7 @@ import { SharedModule } from '../shared/shared.module';
     MessagesComponent,
     ActiveConversationComponent,
     UserAllItemsComponent,
+    AddReviewComponent,
     ],
   imports: [
     CommonModule,

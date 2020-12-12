@@ -1,0 +1,24 @@
+<div *ngIf="isLoading" class="container-loading">Loading...</div>
+<div *ngIf="!isLoading" class="container">
+    <form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
+        <label for="rating"><i class="fas fa-star"></i></label>
+        <div>
+            <select #rating="ngModel" name="rating" id="rating" ngModel required>
+                <option *ngFor="let rating of ratingOptions" value={{rating}}> 
+                    {{rating}}
+                </option>
+            </select>
+            <p class="validation-message" *ngIf="rating.touched && rating.errors?.required">
+                Please choose rating.
+            </p>
+        </div>
+        <div>
+            <label for="text"></label>
+            <textarea #text="ngModel" type="text" name="text" id="text" placeholder="Type review..." ngModel required></textarea>
+            <p class="validation-message" *ngIf="text.touched && text.errors?.required">
+                Please write a review.
+            </p>
+        </div>
+        <button class="submit-btn" type="submit" [disabled]="f.invalid">Submit</button>
+    </form>
+</div>

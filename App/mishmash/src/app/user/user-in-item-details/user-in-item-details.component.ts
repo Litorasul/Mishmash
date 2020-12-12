@@ -39,7 +39,7 @@ export class UserInItemDetailsComponent implements OnInit {
     if (this.user.reviews.length === 0) {
       return '0.0';
     }
-    const result = this.user.reviews.map(r => r.rating).reduce((a, b) => (a + b)) / this.user.reviews.length;
+    const result = this.user.reviews.map(r => r.rating).reduce((a, b) => (+a + +b)) / this.user.reviews.length;
     return result.toFixed(1);
   }
 

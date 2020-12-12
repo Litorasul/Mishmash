@@ -40,5 +40,6 @@
             <div class="rating">{{review.rating}}</div>
             <p class="review-text">{{review.text}}</p>
         </div>
+        <button class="review" *ngIf="!isOwnProfile" [routerLink]="['/user/review', user.objectId]">Write Review</button>
     </div>
 </div>
