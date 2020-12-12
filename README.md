@@ -10,7 +10,7 @@ It uses [Cloudinary](https://cloudinary.com/) as a storige for the images and [n
 
 Unregistered Users can look around and see some basic information about the Items that are for sale.
 
-Registered users can add Items for sale, write messages to other registered users, see and write ratings ang reviews for other registered users and delete the Items they put for sale.
+Registered users can add Items for sale, write messages to other registered users, see and write ratings and reviews for other registered users and delete the Items they put for sale.
 
 ![Mishmash-landingPage](https://github.com/Litorasul/Mishmash/blob/main/Pictures/landingPage.JPG)
 
