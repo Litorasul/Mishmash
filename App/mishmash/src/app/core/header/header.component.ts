@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit{
 
   constructor(
     private authService: AuthService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
   ) {
     this.isLogged = this.authService.authenticate();
     this.user = this.tokenService.getUser();
@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit{
     $event.preventDefault();
     this.authService.logout();
     this.tokenService.clearStorage();
-    window.location.reload();
+    window.location.assign('/');
   }
-
 }
