@@ -4,8 +4,9 @@ https://Litorasul.github.io
 
 Mishmash is a Flea-Market type of app, where you can buy or sell goods user to user. 
 
-It is built up with Angular 11 and it is backed up with API built with Backendless. 
-It uses Cloudinary as a storige for the images and ng-simple-slideshow to display them.
+Mishmash was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+Backend is API built with [Backendless](https://backendless.com/). 
+It uses [Cloudinary](https://cloudinary.com/) as a storige for the images and [ng-simple-slideshow](https://www.npmjs.com/package/ng-simple-slideshow) to display them.
 
 Unregistered Users can look around and see some basic information about the Items that are for sale.
 
